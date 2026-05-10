@@ -210,4 +210,116 @@
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="
+        <source src="https://www.mfiles.co.uk/mp3-downloads/chopin-nocturne-op9-no2.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-control" onclick="toggleMusic()">🎵 Müziği Dinle</button>
+
+    <header>
+        <h1>Canım Annem</h1>
+        <p class="subtitle">Hayatımın ilk öğretmeni, en değerli rehberim...</p>
+    </header>
+    
+    <div class="container">
+        <h2>Güzel Anılarımız</h2>
+        
+        <div class="gallery-wrapper">
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=400&auto=format&fit=crop" alt="Pembe Çiçekler">
+                <div class="photo-caption">En Tatlı Rehber</div>
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop" alt="Kitaplar">
+                <div class="photo-caption">Bilgi Kaynağım</div>
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1516684669134-de6f7c473a2a?q=80&w=400&auto=format&fit=crop" alt="Sıcak Bir Anı">
+                <div class="photo-caption">Canım Annem</div>
+            </div>
+        </div>
+        
+        <div class="letter" style="margin-top: 50px;">
+            Canım Annem,<br><br>
+            Sen bana sadece yürümeyi, konuşmayı değil; sevmeyi, güçlü olmayı ve hayata gülümseyerek bakmayı da öğrettin. Nöbetçi olduğun günlerde, sınav okuduğun gecelerde bile bana ayıracak vaktin, verecek şefkatin hep vardı. Öğrencilerine ışık olurken, benim dünyamı da aydınlatmayı hiç unutmadın. İyi ki benim annem, iyi ki benim ilk ve en değerli öğretmenimsin.
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Annemin Yıl Sonu Karnesi</h2>
+        <div class="report-card">
+            <div class="report-card-inner">
+                <div class="report-card-title">Dünyanın En İyi Annesi Diploması</div>
+                <div class="report-card-row"><span>Sınırsız Sevgi:</span> <span class="grade">Peki (100)</span></div>
+                <div class="report-card-row"><span>Sabır ve Anlayış:</span> <span class="grade">Peki (100)</span></div>
+                <div class="report-card-row"><span>Muhteşem Yemekler:</span> <span class="grade">Peki (100)</span></div>
+                <div class="report-card-row"><span>Hayat Rehberliği (Öğretmenlik):</span> <span class="grade">Peki (100)</span></div>
+                <div class="report-card-row"><span>Fedakarlık:</span> <span class="grade">Yıldızlı Peki</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Öğretmenime Özel Hediye Çekleri</h2>
+        <p style="margin-bottom: 40px; font-style: italic;">Kullanmak istediğin çekin üzerine tıkla. (Asistanın hemen yerine getirecek 😉)</p>
+        <div class="coupons">
+            <div class="coupon" onclick="useCoupon(this)">Sınav Okurken<br>Sınırsız Çay/Kahve ☕</div>
+            <div class="coupon" onclick="useCoupon(this)">Yorgunluk Alıcı<br>Omuz Masajı 💆‍♀️</div>
+            <div class="coupon" onclick="useCoupon(this)">Bugün Bütün Ev İşleri<br>Bende (Sen Dinlen) 🧹</div>
+            <div class="coupon" onclick="useCoupon(this)">E-Okul Nöbetinde<br>Atıştırmalık Servisi 🍎</div>
+        </div>
+    </div>
+
+    <footer>
+        Öğrencilerin çok şanslı, ama en şanslısı benim! Seni çok seviyorum. 🌸
+    </footer>
+
+    <script>
+        let isPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('music-control');
+        
+        bgMusic.volume = 0.5;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.innerHTML = '🎵 Müziği Dinle';
+                musicBtn.style.background = 'linear-gradient(135deg, #e6a8d7, var(--rose-gold))';
+            } else {
+                bgMusic.play().catch(error => {
+                    alert("Lütfen müziği dinlemek için tekrar tıklayın.");
+                });
+                musicBtn.innerHTML = '⏸️ Müziği Durdur';
+                musicBtn.style.background = '#e74c3c';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function useCoupon(element) {
+            if (!element.classList.contains('used')) {
+                element.innerHTML = '✅ Talep Alındı!';
+                element.classList.add('used');
+                setTimeout(() => {
+                    alert('Hediye çekin başarıyla işleme alındı! Nöbetçi asistanın hemen yerine getiriyor.');
+                }, 200);
+            }
+        }
+
+        function createFallingItem() {
+            const item = document.createElement('div');
+            item.classList.add('falling-item');
+            const emojis = ['🌸', '✨', '📚', '🍎'];
+            item.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            item.style.left = Math.random() * 100 + 'vw';
+            item.style.animationDuration = Math.random() * 5 + 5 + 's'; 
+            item.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+            
+            document.body.appendChild(item);
+            setTimeout(() => { item.remove(); }, 10000);
+        }
+        setInterval(createFallingItem, 800);
+    </script>
+
+</body>
+</html>
