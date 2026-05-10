@@ -76,7 +76,7 @@
             font-size: 2.8em;
         }
 
-        /* YENİ: Kaydırmalı Albüm Alanı - Öğretmen Temalı Görseller */
+        /* Kaydırmalı Albüm Alanı */
         .gallery-wrapper {
             display: flex;
             overflow-x: auto;
@@ -105,7 +105,7 @@
         .photo-frame img {
             width: 300px;
             height: 300px;
-            object-fit: cover; /* Resmi kutuya sığdırır */
+            object-fit: cover;
             border: 1px solid #f1f1f1;
         }
         .photo-caption {
@@ -210,122 +210,4 @@
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        Tarayıcınız ses formatını desteklemiyor.
-    </audio>
-
-    <button id="music-control" onclick="toggleMusic()">🎵 Müziği Dinle</button>
-
-    <header>
-        <h1>Canım Annem</h1>
-        <p class="subtitle">Hayatımın ilk öğretmeni, en değerli rehberim...</p>
-    </header>
-    
-    <div class="container">
-        <h2>Güzel Anılarımız</h2>
-        <div class="gallery-wrapper">
-            <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1518118042469-d41d15444e21?q=80&w=400&auto=format&fit=crop" alt="Öğretmen Gülleri">
-                <div class="photo-caption">En Tatlı Rehber</div>
-            </div>
-            <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop" alt="Kitaplar ve Kalp">
-                <div class="photo-caption">Bilgi Kaynağım</div>
-            </div>
-            <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1610472481747-d5d140e340b1?q=80&w=400&auto=format&fit=crop" alt="Anne ve Çocuk Elleri">
-                <div class="photo-caption">Canım Annem</div>
-            </div>
-        </div>
-        
-        <div class="letter" style="margin-top: 50px;">
-            Canım Annem,<br><br>
-            Sen bana sadece yürümeyi, konuşmayı değil; sevmeyi, güçlü olmayı ve hayata gülümseyerek bakmayı da öğrettin. Nöbetçi olduğun günlerde, sınav okuduğun gecelerde bile bana ayıracak vaktin, verecek şefkatin hep vardı. Öğrencilerine ışık olurken, benim dünyamı da aydınlatmayı hiç unutmadın. İyi ki benim annem, iyi ki benim ilk ve en değerli öğretmenimsin.
-        </div>
-    </div>
-
-    <div class="container">
-        <h2>Annemin Yıl Sonu Karnesi</h2>
-        <div class="report-card">
-            <div class="report-card-inner">
-                <div class="report-card-title">Dünyanın En İyi Annesi Diploması</div>
-                <div class="report-card-row"><span>Sınırsız Sevgi:</span> <span class="grade">Peki (100)</span></div>
-                <div class="report-card-row"><span>Sabır ve Anlayış:</span> <span class="grade">Peki (100)</span></div>
-                <div class="report-card-row"><span>Muhteşem Yemekler:</span> <span class="grade">Peki (100)</span></div>
-                <div class="report-card-row"><span>Hayat Rehberliği (Öğretmenlik):</span> <span class="grade">Peki (100)</span></div>
-                <div class="report-card-row"><span>Fedakarlık:</span> <span class="grade">Yıldızlı Peki</span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <h2>Öğretmenime Özel Hediye Çekleri</h2>
-        <p style="margin-bottom: 40px; font-style: italic;">Kullanmak istediğin çekin üzerine tıkla. (Asistanın hemen yerine getirecek 😉)</p>
-        <div class="coupons">
-            <div class="coupon" onclick="useCoupon(this)">Sınav Okurken<br>Sınırsız Çay/Kahve ☕</div>
-            <div class="coupon" onclick="useCoupon(this)">Yorgunluk Alıcı<br>Omuz Masajı 💆‍♀️</div>
-            <div class="coupon" onclick="useCoupon(this)">Bugün Bütün Ev İşleri<br>Bende (Sen Dinlen) 🧹</div>
-            <div class="coupon" onclick="useCoupon(this)">E-Okul Nöbetinde<br>Atıştırmalık Servisi 🍎</div>
-        </div>
-    </div>
-
-    <footer>
-        Öğrencilerin çok şanslı, ama en şanslısı benim! Seni çok seviyorum. 🌸
-    </footer>
-
-    <script>
-        // Müzik Kontrolü - Güncellendi
-        let isPlaying = false;
-        const bgMusic = document.getElementById('bgMusic');
-        const musicBtn = document.getElementById('music-control');
-        
-        // Ses seviyesini ayarla (tatlı bir fon müziği için)
-        bgMusic.volume = 0.5;
-
-        function toggleMusic() {
-            if (isPlaying) {
-                bgMusic.pause();
-                musicBtn.innerHTML = '🎵 Müziği Dinle';
-                musicBtn.style.background = 'linear-gradient(135deg, #e6a8d7, var(--rose-gold))';
-            } else {
-                // Tarayıcıların engellemesini aşmak için hata kontrolü
-                bgMusic.play().catch(error => {
-                    console.log("Müzik çalınamadı, tarayıcı engelledi: ", error);
-                    alert("Lütfen müziği dinlemek için tekrar tıklayın veya tarayıcınızın ses izinlerini kontrol edin.");
-                });
-                musicBtn.innerHTML = '⏸️ Müziği Durdur';
-                musicBtn.style.background = '#e74c3c'; // Durdurma rengi
-            }
-            isPlaying = !isPlaying;
-        }
-
-        // Hediye Çeki İşlemi
-        function useCoupon(element) {
-            if (!element.classList.contains('used')) {
-                element.innerHTML = '✅ Talep Alındı!';
-                element.classList.add('used');
-                setTimeout(() => {
-                    alert('Hediye çekin başarıyla işleme alındı! Nöbetçi asistanın hemen yerine getiriyor.');
-                }, 200);
-            }
-        }
-
-        // Uçuşan Objeler Efekti (Soft)
-        function createFallingItem() {
-            const item = document.createElement('div');
-            item.classList.add('falling-item');
-            const emojis = ['🌸', '✨', '📚', '🍎'];
-            item.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-            
-            item.style.left = Math.random() * 100 + 'vw';
-            item.style.animationDuration = Math.random() * 5 + 5 + 's'; // Daha yavaş düşüş
-            item.style.fontSize = (Math.random() * 1 + 1) + 'rem';
-            
-            document.body.appendChild(item);
-            setTimeout(() => { item.remove(); }, 10000);
-        }
-        setInterval(createFallingItem, 800);
-    </script>
-
-</body>
-</html>
+        <source src="
