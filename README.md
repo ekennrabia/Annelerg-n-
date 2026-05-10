@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Canım Annem 🌸</title>
+<title>Canım Annem 💖</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
@@ -23,48 +23,95 @@
 body{
 
     font-family:'Poppins',sans-serif;
+
     overflow-x:hidden;
-    background:linear-gradient(-45deg,#fff0f6,#fde2e4,#f9dde4,#fff5f7);
+
+    background:linear-gradient(-45deg,#fff0f5,#ffe0ea,#ffd6e7,#fff5f8);
+
     background-size:400% 400%;
+
     animation:bgMove 15s ease infinite;
-    color:#5a4b4b;
+
+    color:#5c4d4d;
 
 }
 
 @keyframes bgMove{
 
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
 
 }
 
 body::before{
 
     content:'';
+
     position:fixed;
+
     inset:0;
 
     background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 30%),
+    radial-gradient(circle at top left, rgba(255,255,255,0.5), transparent 30%),
     radial-gradient(circle at bottom right, rgba(255,192,203,0.25), transparent 30%);
 
-    pointer-events:none;
     z-index:-2;
+
+    pointer-events:none;
+
+}
+
+.container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:40px 20px 100px;
+
+}
+
+.glass{
+
+    background:rgba(255,255,255,0.35);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    border-radius:35px;
+
+    box-shadow:
+    0 10px 40px rgba(255,105,145,0.12);
 
 }
 
 #loader{
 
     position:fixed;
+
     inset:0;
+
     background:#fff0f5;
+
     z-index:9999;
 
     display:flex;
-    flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
+
+    flex-direction:column;
 
     animation:fadeOut 1s ease 2.5s forwards;
 
@@ -73,6 +120,7 @@ body::before{
 .loader-heart{
 
     font-size:5rem;
+
     animation:pulse 1.2s infinite;
 
 }
@@ -80,10 +128,12 @@ body::before{
 .loader-text{
 
     margin-top:20px;
-    font-size:2rem;
+
     font-family:'Great Vibes',cursive;
-    color:#d26a8c;
-    text-align:center;
+
+    font-size:2.3rem;
+
+    color:#d96c92;
 
 }
 
@@ -108,49 +158,36 @@ body::before{
 
 }
 
-.container{
-
-    max-width:1150px;
-    margin:auto;
-    padding:40px 20px 100px;
-
-}
-
-.glass{
-
-    background:rgba(255,255,255,0.35);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.45);
-
-    border-radius:35px;
-
-    box-shadow:
-    0 10px 40px rgba(210,106,140,0.12);
-
-}
-
 header{
 
     text-align:center;
-    padding:80px 20px 50px;
+
+    padding:80px 20px 60px;
 
 }
 
 .hero-title{
 
     font-size:6rem;
-    color:#d26a8c;
+
     font-family:'Great Vibes',cursive;
-    text-shadow:0 4px 20px rgba(255,255,255,0.8);
+
+    color:#d96c92;
+
+    text-shadow:0 5px 25px rgba(255,255,255,0.9);
 
 }
 
 .hero-subtitle{
 
     margin-top:15px;
+
     font-size:1.3rem;
+
     color:#786565;
+
     font-family:'Playfair Display',serif;
+
     font-style:italic;
 
 }
@@ -158,15 +195,19 @@ header{
 .music-box{
 
     padding:25px;
-    margin-bottom:50px;
+
+    margin-bottom:55px;
 
 }
 
 .music-title{
 
     text-align:center;
+
     margin-bottom:18px;
-    color:#d26a8c;
+
+    color:#d96c92;
+
     font-weight:600;
 
 }
@@ -174,12 +215,18 @@ header{
 .message{
 
     padding:55px;
+
     text-align:center;
+
     line-height:2.2;
+
     font-size:1.15rem;
+
     margin-bottom:60px;
-    position:relative;
+
     font-family:'Playfair Display',serif;
+
+    position:relative;
 
 }
 
@@ -188,12 +235,16 @@ header{
     content:'❝';
 
     position:absolute;
+
     top:-10px;
+
     left:15px;
 
     font-size:5rem;
+
+    color:#d96c92;
+
     opacity:0.15;
-    color:#d26a8c;
 
 }
 
@@ -202,21 +253,29 @@ header{
     content:'❞';
 
     position:absolute;
+
     bottom:-40px;
+
     right:20px;
 
     font-size:5rem;
+
+    color:#d96c92;
+
     opacity:0.15;
-    color:#d26a8c;
 
 }
 
 .section-title{
 
     text-align:center;
+
     margin-bottom:35px;
-    color:#d26a8c;
+
     font-size:4rem;
+
+    color:#d96c92;
+
     font-family:'Great Vibes',cursive;
 
 }
@@ -224,6 +283,7 @@ header{
 .report-card{
 
     padding:45px;
+
     margin-bottom:70px;
 
 }
@@ -231,12 +291,14 @@ header{
 .report-row{
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:18px 0;
 
-    border-bottom:1px dashed rgba(210,106,140,0.25);
+    border-bottom:1px dashed rgba(217,108,146,0.25);
 
 }
 
@@ -249,7 +311,9 @@ header{
 .grade{
 
     font-size:2rem;
-    color:#d26a8c;
+
+    color:#d96c92;
+
     font-family:'Great Vibes',cursive;
 
 }
@@ -257,8 +321,11 @@ header{
 .coupon-info{
 
     text-align:center;
+
     margin-bottom:25px;
+
     color:#7d6969;
+
     font-style:italic;
 
 }
@@ -266,7 +333,9 @@ header{
 .coupon-grid{
 
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
     gap:30px;
 
 }
@@ -274,8 +343,11 @@ header{
 .coupon{
 
     padding:35px 25px;
+
     text-align:center;
+
     transition:0.4s;
+
     cursor:pointer;
 
 }
@@ -283,6 +355,7 @@ header{
 .coupon:hover{
 
     transform:translateY(-12px) scale(1.03);
+
     background:rgba(255,255,255,0.5);
 
 }
@@ -290,6 +363,7 @@ header{
 .coupon-icon{
 
     font-size:3rem;
+
     margin-bottom:15px;
 
 }
@@ -297,7 +371,9 @@ header{
 .coupon h3{
 
     margin-bottom:15px;
-    color:#d26a8c;
+
+    color:#d96c92;
+
     font-family:'Playfair Display',serif;
 
 }
@@ -308,15 +384,10 @@ header{
 
 }
 
-.used{
-
-    opacity:0.6;
-
-}
-
 .love-notes{
 
     margin-top:70px;
+
     padding:45px;
 
 }
@@ -324,8 +395,11 @@ header{
 .notes-grid{
 
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
     gap:25px;
+
     margin-top:30px;
 
 }
@@ -333,11 +407,13 @@ header{
 .note-card{
 
     background:rgba(255,255,255,0.3);
+
     border:1px solid rgba(255,255,255,0.35);
 
     border-radius:25px;
 
     padding:30px 20px;
+
     text-align:center;
 
     transition:0.4s;
@@ -347,6 +423,7 @@ header{
 .note-card:hover{
 
     transform:translateY(-10px) scale(1.03);
+
     background:rgba(255,255,255,0.5);
 
 }
@@ -354,6 +431,7 @@ header{
 .note-emoji{
 
     font-size:2.7rem;
+
     margin-bottom:15px;
 
 }
@@ -361,7 +439,9 @@ header{
 .note-card h3{
 
     margin-bottom:12px;
-    color:#d26a8c;
+
+    color:#d96c92;
+
     font-family:'Playfair Display',serif;
 
 }
@@ -375,22 +455,29 @@ header{
 .memory-section{
 
     margin-top:70px;
-    padding:50px;
+
+    padding:55px;
+
     text-align:center;
+
     line-height:2.2;
+
     position:relative;
 
 }
 
 .memory-section::before{
 
-    content:'💗';
+    content:'💖';
 
     position:absolute;
+
     top:20px;
+
     right:30px;
 
     font-size:2rem;
+
     opacity:0.5;
 
 }
@@ -400,10 +487,13 @@ header{
     content:'🌸';
 
     position:absolute;
+
     bottom:20px;
+
     left:30px;
 
     font-size:2rem;
+
     opacity:0.5;
 
 }
@@ -411,27 +501,32 @@ header{
 .big-button{
 
     display:block;
+
     margin:80px auto 40px;
 
     border:none;
+
+    padding:24px 65px;
+
     border-radius:70px;
 
-    padding:24px 60px;
-
-    background:linear-gradient(135deg,#d26a8c,#f39db7);
+    background:linear-gradient(135deg,#ff7aa2,#ffb6cb);
 
     color:white;
 
-    font-size:2.5rem;
+    font-size:2.6rem;
+
     font-family:'Great Vibes',cursive;
 
     cursor:pointer;
+
     transition:0.4s;
 
     box-shadow:
-    0 10px 35px rgba(210,106,140,0.3);
+    0 10px 35px rgba(255,105,145,0.3);
 
     position:relative;
+
     overflow:hidden;
 
 }
@@ -477,41 +572,79 @@ header{
 footer{
 
     text-align:center;
+
     padding:40px 20px;
 
-    color:#d26a8c;
-
     font-size:2.5rem;
+
+    color:#d96c92;
+
     font-family:'Great Vibes',cursive;
+
+}
+
+.heart{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    animation:floatUp linear forwards;
+
+    z-index:999;
 
 }
 
 @keyframes floatUp{
 
     0%{
+
         transform:translateY(0) scale(0.8);
+
         opacity:0;
+
     }
 
     20%{
+
         opacity:1;
+
     }
 
     100%{
-        transform:translateY(-110vh) scale(1.3);
+
+        transform:translateY(-120vh) scale(1.4);
+
         opacity:0;
+
     }
+
+}
+
+.sparkle{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    animation:fallDown linear forwards;
+
+    z-index:-1;
 
 }
 
 @keyframes fallDown{
 
     0%{
+
         transform:translateY(0) rotate(0deg);
+
     }
 
     100%{
+
         transform:translateY(110vh) rotate(360deg);
+
     }
 
 }
@@ -519,26 +652,39 @@ footer{
 @media(max-width:768px){
 
     .hero-title{
+
         font-size:4rem;
+
     }
 
     .section-title{
+
         font-size:3rem;
+
     }
 
     .message{
+
         padding:35px;
+
         font-size:1rem;
+
     }
 
     .report-row{
+
         flex-direction:column;
+
         align-items:flex-start;
+
         gap:10px;
+
     }
 
     .grade{
+
         align-self:flex-end;
+
     }
 
 }
@@ -551,7 +697,9 @@ footer{
 
 <div id="loader">
 
-<div class="loader-heart">💖</div>
+<div class="loader-heart">
+💖
+</div>
 
 <div class="loader-text">
 Canım annem için hazırlanıyor...
@@ -564,7 +712,7 @@ Canım annem için hazırlanıyor...
 <header>
 
 <h1 class="hero-title">
-Canım Annem
+Canım Annem 💖
 </h1>
 
 <p class="hero-subtitle">
@@ -746,77 +894,23 @@ Anneler Günün Kutlu Olsun 🌸
 
 <script>
 
-function claim(el){
-
-    if(!el.classList.contains('used')){
-
-        el.classList.add('used');
-
-        el.innerHTML=`
-        <div class="coupon-icon">💖</div>
-        <h3>Kupon Kullanıldı!</h3>
-        <p>Asistan hemen göreve başladı 😌</p>
-        `;
-
-        createFloatingHeart();
-
-    }
-
-}
-
-function celebrate(){
-
-    let duration = 5000;
-    let end = Date.now() + duration;
-
-    const colors = ['#ff4d88','#ff99bb','#ffd6e7','#ffffff'];
-
-    (function frame(){
-
-        confetti({
-            particleCount:4,
-            angle:60,
-            spread:70,
-            origin:{x:0},
-            colors:colors
-        });
-
-        confetti({
-            particleCount:4,
-            angle:120,
-            spread:70,
-            origin:{x:1},
-            colors:colors
-        });
-
-        createFloatingHeart();
-
-        if(Date.now() < end){
-
-            requestAnimationFrame(frame);
-
-        }
-
-    })();
-
-}
-
-function createFloatingHeart(){
+function createHeart(){
 
     const heart=document.createElement('div');
 
-    heart.innerHTML='💖';
+    heart.classList.add('heart');
 
-    heart.style.position='fixed';
+    const hearts=['💖','💗','💕','🌸','🤍'];
+
+    heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
     heart.style.left=Math.random()*100+'vw';
+
     heart.style.bottom='-30px';
 
-    heart.style.fontSize=(Math.random()*25+20)+'px';
+    heart.style.fontSize=(Math.random()*30+20)+'px';
 
-    heart.style.zIndex='9999';
-    heart.style.pointerEvents='none';
-
-    heart.style.animation='floatUp 4s linear forwards';
+    heart.style.animationDuration=(Math.random()*3+4)+'s';
 
     document.body.appendChild(heart);
 
@@ -824,31 +918,27 @@ function createFloatingHeart(){
 
         heart.remove();
 
-    },4000);
+    },7000);
 
 }
 
-function createSparkles(){
+setInterval(createHeart,500);
+
+function createSparkle(){
 
     const sparkle=document.createElement('div');
 
-    const items=['✨','🌸','💗','🤍'];
+    sparkle.classList.add('sparkle');
+
+    const items=['✨','💖','🌸'];
 
     sparkle.innerHTML=items[Math.floor(Math.random()*items.length)];
 
-    sparkle.style.position='fixed';
     sparkle.style.left=Math.random()*100+'vw';
+
     sparkle.style.top='-20px';
 
     sparkle.style.fontSize=(Math.random()*18+14)+'px';
-
-    sparkle.style.opacity='0.8';
-
-    sparkle.style.pointerEvents='none';
-
-    sparkle.style.zIndex='-1';
-
-    sparkle.style.animation='fallDown linear forwards';
 
     sparkle.style.animationDuration=(Math.random()*5+6)+'s';
 
@@ -862,9 +952,96 @@ function createSparkles(){
 
 }
 
-setInterval(createSparkles,900);
+setInterval(createSparkle,900);
+
+function celebrate(){
+
+    let duration=5000;
+
+    let end=Date.now()+duration;
+
+    const colors=['#ff4d88','#ff99bb','#ffd6e7','#ffffff'];
+
+    (function frame(){
+
+        confetti({
+
+            particleCount:4,
+
+            angle:60,
+
+            spread:70,
+
+            origin:{x:0},
+
+            colors:colors
+
+        });
+
+        confetti({
+
+            particleCount:4,
+
+            angle:120,
+
+            spread:70,
+
+            origin:{x:1},
+
+            colors:colors
+
+        });
+
+        for(let i=0;i<3;i++){
+
+            createHeart();
+
+        }
+
+        if(Date.now()<end){
+
+            requestAnimationFrame(frame);
+
+        }
+
+    })();
+
+}
+
+function claim(el){
+
+    if(!el.classList.contains('used')){
+
+        el.classList.add('used');
+
+        el.innerHTML=`
+
+        <div class="coupon-icon">💖</div>
+
+        <h3>Kupon Kullanıldı!</h3>
+
+        <p>
+        Asistan hemen göreve başladı 😌
+        </p>
+
+        `;
+
+        for(let i=0;i<12;i++){
+
+            setTimeout(()=>{
+
+                createHeart();
+
+            },i*100);
+
+        }
+
+    }
+
+}
 
 </script>
 
 </body>
+
 </html>
