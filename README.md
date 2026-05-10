@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canım Annem & Biricik Öğretmenim 🌸</title>
+    <title>Biricik Annem & En Değerli Öğretmenim 🌸</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -16,74 +16,71 @@
         body { 
             font-family: 'Playfair Display', serif; 
             background-color: var(--soft-pink); 
-            background-image: radial-gradient(var(--rose-gold) 0.5px, transparent 0.5px), radial-gradient(var(--rose-gold) 0.5px, var(--soft-pink) 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
             color: var(--text-dark); 
             margin: 0; 
             padding: 0; 
             text-align: center; 
             overflow-x: hidden; 
         }
-        header { 
+        
+        /* Müzik Oynatıcı Butonu - Sabit ve Belirgin */
+        #music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
             background: linear-gradient(135deg, #e6a8d7, var(--rose-gold));
-            padding: 70px 20px; 
-            color: white; 
-            box-shadow: 0 4px 15px rgba(183, 110, 121, 0.3);
-            position: relative;
-            z-index: 10;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        #music-control:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+
+        header { 
+            background: linear-gradient(135deg, #fce4ec, var(--soft-pink));
+            padding: 90px 20px; 
+            border-bottom: 2px solid var(--rose-gold);
         }
         h1 { 
             font-size: 3.5em; 
             margin: 0; 
             font-family: 'Dancing Script', cursive; 
+            color: var(--rose-gold);
             letter-spacing: 2px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        p.subtitle { font-size: 1.3em; font-style: italic; opacity: 0.9; }
+        p.subtitle { font-size: 1.3em; font-style: italic; color: #7f8c8d; }
         
         .container { 
-            max-width: 800px; 
-            margin: 40px auto; 
+            max-width: 850px; 
+            margin: 50px auto; 
             padding: 40px; 
             background: var(--cream); 
             border-radius: 20px; 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
-            position: relative;
-            z-index: 10;
-            border: 1px solid rgba(183, 110, 121, 0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05); 
+            border: 1px solid rgba(183, 110, 121, 0.1);
         }
         h2 { 
             color: var(--rose-gold); 
             border-bottom: 2px solid var(--rose-gold); 
-            padding-bottom: 10px; 
+            padding-bottom: 15px; 
             display: inline-block; 
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             font-family: 'Dancing Script', cursive;
-            font-size: 2.5em;
+            font-size: 2.8em;
         }
 
-        /* Müzik Oynatıcı Butonu */
-        .music-btn {
-            background-color: var(--rose-gold);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .music-btn:hover { transform: scale(1.05); }
-
-        /* Kaydırmalı Albüm Alanı */
+        /* YENİ: Kaydırmalı Albüm Alanı - Öğretmen Temalı Görseller */
         .gallery-wrapper {
             display: flex;
             overflow-x: auto;
-            gap: 20px;
+            gap: 25px;
             padding: 20px 10px;
             scroll-snap-type: x mandatory;
             scrollbar-width: thin;
@@ -96,19 +93,20 @@
             flex: 0 0 auto;
             scroll-snap-align: center;
             background-color: white;
-            padding: 15px 15px 40px 15px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 15px 15px 50px 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
             position: relative;
+            border: 1px solid #eee;
         }
         .photo-frame:nth-child(odd) { transform: rotate(-2deg); }
         .photo-frame:nth-child(even) { transform: rotate(2deg); }
-        .photo-frame:hover { transform: rotate(0deg) scale(1.02); z-index: 5; }
+        .photo-frame:hover { transform: rotate(0deg) scale(1.03); z-index: 5; }
         .photo-frame img {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border: 1px solid #eee;
+            width: 300px;
+            height: 300px;
+            object-fit: cover; /* Resmi kutuya sığdırır */
+            border: 1px solid #f1f1f1;
         }
         .photo-caption {
             position: absolute;
@@ -116,109 +114,93 @@
             width: calc(100% - 30px);
             text-align: center;
             font-family: 'Dancing Script', cursive;
-            font-size: 1.5em;
+            font-size: 1.6em;
             color: var(--text-dark);
         }
 
         /* Mektup Alanı */
         .letter {
-            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
             background-color: #fffaf0;
-            padding: 30px;
+            padding: 40px;
             font-style: italic;
             text-align: left;
-            line-height: 2;
-            font-size: 1.15em;
-            border: 1px solid #e8d8c8;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.03);
+            line-height: 2.2;
+            font-size: 1.2em;
+            border-left: 5px solid var(--rose-gold);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
             position: relative;
         }
         .letter::before {
-            content: '❝';
-            font-size: 4em;
-            color: rgba(183, 110, 121, 0.2);
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-family: serif;
+            content: '❝'; font-size: 5em; color: rgba(183, 110, 121, 0.1);
+            position: absolute; top: -15px; left: 15px; font-family: serif;
         }
 
         /* Karne Alanı */
         .report-card {
-            border: 2px solid var(--rose-gold);
-            padding: 2px;
-            border-radius: 5px;
+            border: 3px double var(--rose-gold);
+            padding: 5px;
+            border-radius: 10px;
+            background-color: white;
         }
         .report-card-inner {
             border: 1px solid var(--rose-gold);
-            padding: 20px 40px;
-            background-color: transparent;
+            padding: 30px 50px;
         }
         .report-card-title {
-            text-align: center;
-            font-weight: bold;
-            color: var(--rose-gold);
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            text-align: center; font-weight: bold; color: var(--rose-gold);
+            font-size: 1.6em; margin-bottom: 25px; text-transform: uppercase;
         }
         .report-card-row {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(183, 110, 121, 0.3);
-            padding: 12px 0;
-            font-size: 1.1em;
+            display: flex; justify-content: space-between;
+            border-bottom: 1px solid rgba(183, 110, 121, 0.2);
+            padding: 15px 0; font-size: 1.2em;
         }
         .report-card-row:last-child { border-bottom: none; }
-        .grade { color: var(--rose-gold); font-weight: bold; font-family: 'Dancing Script', cursive; font-size: 1.4em;}
+        .grade { color: #2ecc71; font-weight: bold; font-family: 'Dancing Script', cursive; font-size: 1.5em;}
 
         /* Kuponlar */
         .coupons { 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px; 
         }
         .coupon { 
             background: white; 
             border: 2px dashed var(--rose-gold); 
-            padding: 20px; 
-            border-radius: 8px; 
+            padding: 25px; 
+            border-radius: 12px; 
             cursor: pointer; 
             transition: all 0.3s ease; 
             font-weight: bold; 
             color: var(--rose-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 80px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; min-height: 100px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            font-size: 1.1em;
         }
         .coupon:hover { 
             background-color: var(--rose-gold); 
             color: white; 
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(183, 110, 121, 0.3);
+            box-shadow: 0 10px 20px rgba(183, 110, 121, 0.2);
         }
         .used { 
-            background-color: #f5f5f5 !important; 
-            border-color: #d3d3d3 !important; 
-            color: #a9a9a9 !important; 
-            cursor: not-allowed; 
-            text-decoration: line-through; 
-            transform: translateY(0) !important;
-            box-shadow: none !important;
+            background-color: #bdc3c7 !important; border-color: #95a5a6 !important; 
+            color: white !important; cursor: not-allowed; 
+            text-decoration: line-through; transform: translateY(0) !important;
+            box-shadow: none !important; opacity: 0.7;
+        }
+        
+        footer {
+            padding: 60px; color: var(--rose-gold); 
+            font-family: 'Dancing Script', cursive; font-size: 2.5em;
         }
         
         /* Uçuşan Objeler */
         .falling-item {
-            position: fixed;
-            top: -10vh;
-            z-index: 1;
-            animation: fall linear forwards;
-            opacity: 0.7;
+            position: fixed; top: -10vh; z-index: 1;
+            animation: fall linear forwards; opacity: 0.6;
         }
         @keyframes fall {
             to { transform: translateY(110vh) rotate(360deg); }
@@ -228,35 +210,37 @@
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Tarayıcınız ses formatını desteklemiyor.
     </audio>
 
+    <button id="music-control" onclick="toggleMusic()">🎵 Müziği Dinle</button>
+
     <header>
-        <h1>Anneler Günün Kutlu Olsun</h1>
-        <p class="subtitle">Hayatımın en güzel detayı, en değerli öğretmenim...</p>
-        <button class="music-btn" onclick="toggleMusic()">🎵 Müziği Başlat</button>
+        <h1>Canım Annem</h1>
+        <p class="subtitle">Hayatımın ilk öğretmeni, en değerli rehberim...</p>
     </header>
     
     <div class="container">
         <h2>Güzel Anılarımız</h2>
         <div class="gallery-wrapper">
             <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=400&auto=format&fit=crop" alt="Anı 1">
-                <div class="photo-caption">En iyi arkadaşım</div>
+                <img src="https://images.unsplash.com/photo-1518118042469-d41d15444e21?q=80&w=400&auto=format&fit=crop" alt="Öğretmen Gülleri">
+                <div class="photo-caption">En Tatlı Rehber</div>
             </div>
             <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=400&auto=format&fit=crop" alt="Anı 2">
-                <div class="photo-caption">Rehberim</div>
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop" alt="Kitaplar ve Kalp">
+                <div class="photo-caption">Bilgi Kaynağım</div>
             </div>
             <div class="photo-frame">
-                <img src="https://images.unsplash.com/photo-1516684669134-de6f7c473a2a?q=80&w=400&auto=format&fit=crop" alt="Anı 3">
+                <img src="https://images.unsplash.com/photo-1610472481747-d5d140e340b1?q=80&w=400&auto=format&fit=crop" alt="Anne ve Çocuk Elleri">
                 <div class="photo-caption">Canım Annem</div>
             </div>
         </div>
         
-        <div class="letter" style="margin-top: 40px;">
+        <div class="letter" style="margin-top: 50px;">
             Canım Annem,<br><br>
-            Sen bana sadece yürümeyi, konuşmayı değil; sevmeyi, güçlü olmayı ve hayata gülümseyerek bakmayı da öğrettin. Yüzlerce çocuğun hayatına ışık olurken, eve geldiğinde benim dünyamı da aydınlatmayı hiç unutmadın. Sadece mükemmel bir anne değil, aynı zamanda harika bir insansın. İyi ki benim annem, iyi ki benim ilk ve en değerli öğretmenimsin.
+            Sen bana sadece yürümeyi, konuşmayı değil; sevmeyi, güçlü olmayı ve hayata gülümseyerek bakmayı da öğrettin. Nöbetçi olduğun günlerde, sınav okuduğun gecelerde bile bana ayıracak vaktin, verecek şefkatin hep vardı. Öğrencilerine ışık olurken, benim dünyamı da aydınlatmayı hiç unutmadın. İyi ki benim annem, iyi ki benim ilk ve en değerli öğretmenimsin.
         </div>
     </div>
 
@@ -275,34 +259,42 @@
     </div>
 
     <div class="container">
-        <h2>Sana Özel Hediye Çekleri</h2>
-        <p style="margin-bottom: 30px; font-style: italic;">Kullanmak istediğin çekin üzerine tıkla. (Süresiz geçerlidir)</p>
+        <h2>Öğretmenime Özel Hediye Çekleri</h2>
+        <p style="margin-bottom: 40px; font-style: italic;">Kullanmak istediğin çekin üzerine tıkla. (Asistanın hemen yerine getirecek 😉)</p>
         <div class="coupons">
-            <div class="coupon" onclick="useCoupon(this)">Sınav Okurken Sınırsız<br>Kahve/Çay Servisi ☕</div>
+            <div class="coupon" onclick="useCoupon(this)">Sınav Okurken<br>Sınırsız Çay/Kahve ☕</div>
             <div class="coupon" onclick="useCoupon(this)">Yorgunluk Alıcı<br>Omuz Masajı 💆‍♀️</div>
             <div class="coupon" onclick="useCoupon(this)">Bugün Bütün Ev İşleri<br>Bende (Sen Dinlen) 🧹</div>
-            <div class="coupon" onclick="useCoupon(this)">İstediğin Diziyi/Filmi<br>İtirazsız İzleme Hakkı 📺</div>
+            <div class="coupon" onclick="useCoupon(this)">E-Okul Nöbetinde<br>Atıştırmalık Servisi 🍎</div>
         </div>
     </div>
 
-    <footer style="padding: 40px; color: var(--rose-gold); text-align: center; font-family: 'Dancing Script', cursive; font-size: 2em;">
-        Seni çok seviyorum... 🌸
+    <footer>
+        Öğrencilerin çok şanslı, ama en şanslısı benim! Seni çok seviyorum. 🌸
     </footer>
 
     <script>
-        // Müzik Kontrolü
+        // Müzik Kontrolü - Güncellendi
         let isPlaying = false;
         const bgMusic = document.getElementById('bgMusic');
-        bgMusic.volume = 0.4; // Sesi rahatsız etmeyecek seviyeye çektik
+        const musicBtn = document.getElementById('music-control');
+        
+        // Ses seviyesini ayarla (tatlı bir fon müziği için)
+        bgMusic.volume = 0.5;
 
         function toggleMusic() {
-            const btn = document.querySelector('.music-btn');
             if (isPlaying) {
                 bgMusic.pause();
-                btn.innerHTML = '🎵 Müziği Başlat';
+                musicBtn.innerHTML = '🎵 Müziği Dinle';
+                musicBtn.style.background = 'linear-gradient(135deg, #e6a8d7, var(--rose-gold))';
             } else {
-                bgMusic.play();
-                btn.innerHTML = '⏸️ Müziği Durdur';
+                // Tarayıcıların engellemesini aşmak için hata kontrolü
+                bgMusic.play().catch(error => {
+                    console.log("Müzik çalınamadı, tarayıcı engelledi: ", error);
+                    alert("Lütfen müziği dinlemek için tekrar tıklayın veya tarayıcınızın ses izinlerini kontrol edin.");
+                });
+                musicBtn.innerHTML = '⏸️ Müziği Durdur';
+                musicBtn.style.background = '#e74c3c'; // Durdurma rengi
             }
             isPlaying = !isPlaying;
         }
@@ -310,29 +302,29 @@
         // Hediye Çeki İşlemi
         function useCoupon(element) {
             if (!element.classList.contains('used')) {
-                element.innerHTML = 'Onaylandı! ❤️';
+                element.innerHTML = '✅ Talep Alındı!';
                 element.classList.add('used');
                 setTimeout(() => {
-                    alert('Hediye çekin başarıyla işleme alındı! Asistanın hemen yerine getiriyor.');
+                    alert('Hediye çekin başarıyla işleme alındı! Nöbetçi asistanın hemen yerine getiriyor.');
                 }, 200);
             }
         }
 
-        // Uçuşan Objeler Efekti
+        // Uçuşan Objeler Efekti (Soft)
         function createFallingItem() {
             const item = document.createElement('div');
             item.classList.add('falling-item');
-            const emojis = ['🌸', '✨', '🤍', '🍎']; // Daha soft emojiler
+            const emojis = ['🌸', '✨', '📚', '🍎'];
             item.innerText = emojis[Math.floor(Math.random() * emojis.length)];
             
             item.style.left = Math.random() * 100 + 'vw';
-            item.style.animationDuration = Math.random() * 4 + 4 + 's';
+            item.style.animationDuration = Math.random() * 5 + 5 + 's'; // Daha yavaş düşüş
             item.style.fontSize = (Math.random() * 1 + 1) + 'rem';
             
             document.body.appendChild(item);
-            setTimeout(() => { item.remove(); }, 8000);
+            setTimeout(() => { item.remove(); }, 10000);
         }
-        setInterval(createFallingItem, 600);
+        setInterval(createFallingItem, 800);
     </script>
 
 </body>
