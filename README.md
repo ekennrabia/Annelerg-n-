@@ -1,6 +1,3 @@
-# Premium Anneler Günü Web Sitesi (Tam Yenilenmiş Versiyon)
-
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -12,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -291,6 +289,7 @@ footer{
 }
 
 @media(max-width:768px){
+
     .hero-title{
         font-size:4rem;
     }
@@ -313,31 +312,56 @@ footer{
     .grade{
         align-self:flex-end;
     }
+
 }
+
 </style>
 </head>
+
 <body>
 
 <div id="loader">
     <div class="loader-flower">🌸</div>
-    <div class="loader-text">Dünyanın en güzel annesi için hazırlanıyor...</div>
+    <div class="loader-text">
+        Dünyanın en güzel annesi için hazırlanıyor...
+    </div>
 </div>
 
 <div class="container">
 
 <header>
     <h1 class="hero-title">Canım Annem</h1>
-    <p class="hero-subtitle">Hayatıma sevgiyi, gücü ve umudu öğreten en güzel insan...</p>
+    <p class="hero-subtitle">
+        Hayatıma sevgiyi, gücü ve umudu öğreten en güzel insan...
+    </p>
 </header>
 
 <div class="music-box glass">
-    <div class="music-title">🎧 Bu sayfa senin için hazırlandı...</div>
 
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0SM0LYsmbMT?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="music-title">
+        🎧 Bu sayfa senin için hazırlandı...
+    </div>
+
+    <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0SM0LYsmbMT?utm_source=generator"
+        width="100%"
+        height="152"
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+    </iframe>
+
 </div>
 
 <div class="message glass">
-    Hayatımdaki en zor anlarda bile bana güç veren, yorulduğumda tek bakışıyla içimi huzurla dolduran canım annem... Sen sadece bir anne değil, aynı zamanda benim ilk öğretmenim, en yakın arkadaşım ve en güvenli limanımsın. Başkalarının hayatına ışık olurken bile benim mutluluğumu hiç unutmaman, beni her zaman sevginle koruman hayatımdaki en büyük şanslardan biri. İyi ki varsın. İyi ki benim annemsin. 🌸
+
+Hayatımdaki en zor anlarda bile bana güç veren, yorulduğumda tek bakışıyla içimi huzurla dolduran canım annem...  
+Sen sadece bir anne değil, aynı zamanda benim ilk öğretmenim, en yakın arkadaşım ve en güvenli limanımsın.  
+Başkalarının hayatına ışık olurken bile benim mutluluğumu hiç unutmaman, beni her zaman sevginle koruman hayatımdaki en büyük şanslardan biri.  
+İyi ki varsın. İyi ki benim annemsin. 🌸
+
 </div>
 
 <h2 class="section-title">Anne Karnesi</h2>
@@ -368,45 +392,64 @@ footer{
 
 <h2 class="section-title">Sana Özel Kuponlar</h2>
 
-<p class="coupon-info">İstediğin kupona dokunman yeterli ✨</p>
+<p class="coupon-info">
+İstediğin kupona dokunman yeterli ✨
+</p>
 
 <div class="coupon-grid">
 
 <div class="coupon glass" onclick="claim(this)">
 <div class="coupon-icon">☕</div>
 <h3>Kahve & Sohbet Günü</h3>
-<p>Beraber uzun uzun kahve içip sohbet edeceğimiz tamamen sana ayrılmış özel bir gün.</p>
+<p>
+Beraber uzun uzun kahve içip sohbet edeceğimiz tamamen sana ayrılmış özel bir gün.
+</p>
 </div>
 
 <div class="coupon glass" onclick="claim(this)">
 <div class="coupon-icon">💆🏻‍♀️</div>
 <h3>Yorgunluk Silme Paketi</h3>
-<p>Çay servisi, omuz masajı ve tüm ev işlerinde tam destek hakkı.</p>
+<p>
+Çay servisi, omuz masajı ve tüm ev işlerinde tam destek hakkı.
+</p>
 </div>
 
 <div class="coupon glass" onclick="claim(this)">
 <div class="coupon-icon">🍰</div>
 <h3>Tatlı Kaçamağı</h3>
-<p>Birlikte sevdiğimiz bir yere gidip tatlı yiyip güzel anılar biriktirme günü.</p>
+<p>
+Birlikte sevdiğimiz bir yere gidip tatlı yiyip güzel anılar biriktirme günü.
+</p>
 </div>
 
 <div class="coupon glass" onclick="claim(this)">
 <div class="coupon-icon">💻</div>
 <h3>Teknik Destek Premium</h3>
-<p>Telefon, bilgisayar, televizyon, internet... O gün tüm teknik işler bende 😎</p>
+<p>
+Telefon, bilgisayar, televizyon, internet... O gün tüm teknik işler bende 😎
+</p>
 </div>
 
 </div>
 
 <div class="memory-section glass">
+
 <h2 class="section-title">Bir Şey Daha...</h2>
 
 <p class="memory-text">
-Belki bazen yeterince söylemiyorum ama senin emeğinin, sevgisinin ve fedakarlığının değerini biliyorum. Bugün olduğum her şeyde senin payın var. Bana her zaman inandığın için, beni her koşulda sevdiğin için teşekkür ederim. Dünyadaki hiçbir hediye seni anlatmaya yetmez ama umarım bu küçük sürpriz yüzünde güzel bir gülümseme bırakır. 🤍
+
+Belki bazen yeterince söylemiyorum ama senin emeğinin, sevgisinin ve fedakarlığının değerini biliyorum.  
+Bugün olduğum her şeyde senin payın var.  
+Bana her zaman inandığın için, beni her koşulda sevdiğin için teşekkür ederim.  
+Dünyadaki hiçbir hediye seni anlatmaya yetmez ama umarım bu küçük sürpriz yüzünde güzel bir gülümseme bırakır. 🤍
+
 </p>
+
 </div>
 
-<button class="big-button" onclick="celebrate()">Seni Çok Seviyorum ❤️</button>
+<button class="big-button" onclick="celebrate()">
+Seni Çok Seviyorum ❤️
+</button>
 
 <footer>
 Anneler Günün Kutlu Olsun 🌸
@@ -415,8 +458,11 @@ Anneler Günün Kutlu Olsun 🌸
 </div>
 
 <script>
+
 function claim(el){
+
     if(!el.classList.contains('used')){
+
         el.classList.add('used');
 
         el.innerHTML=`
@@ -430,7 +476,9 @@ function claim(el){
             spread:70,
             origin:{y:0.7}
         });
+
     }
+
 }
 
 function celebrate(){
@@ -459,6 +507,7 @@ function celebrate(){
         }
 
     })();
+
 }
 
 function createPetal(){
@@ -479,25 +528,12 @@ function createPetal(){
     setTimeout(()=>{
         petal.remove();
     },12000);
+
 }
 
 setInterval(createPetal,1300);
+
 </script>
 
 </body>
 </html>
-```
-
-Bu versiyon öncekinden çok daha premium his verir:
-
-* Daha duygusal ve zarif metinler
-* C-drama kısmı tamamen kaldırıldı
-* Daha şık font kombinasyonları
-* Daha modern animasyonlar
-* Daha profesyonel renk paleti
-* Daha duygusal anne odaklı içerik
-* Mobil görünüm ciddi şekilde iyileştirildi
-* Daha premium cam efekti
-* Daha sinematik açılış hissi
-
-Bunu GitHub Pages’e atarsan bayağı profesyonel görünür. Hatta insanlar hazır template sanabilir 😭
